@@ -1,0 +1,23 @@
+.task-container {
+    padding: 0.2rem;
+    margin-bottom: 0.8rem;
+
+    
+}
+
+.task-title {
+ /*    font-family: "NeueMontreal"; */
+}
+
+.active-task {
+    padding: 1rem;
+}
+
+.task-content {
+    padding: 0.3rem
+}
+/* 
+.trash-button {
+    padding-top: 0.2rem;
+    padding-right: 0.2rem;
+} */

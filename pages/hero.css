@@ -1,0 +1,42 @@
+
+
+.hero-description {
+    /* font-family: 'NeueMontreal'; */
+}
+
+.learnmore-btn , .getstarted-btn {
+    padding: 10px 20px;
+/*     font-family: "NeueMontreal";
+    font-weight: 400; */
+    cursor: pointer;
+}
+
+.learnmore-btn {
+    border-radius: 10px;
+    border: 2px solid rgb(210, 210, 210);
+    background-color: white;
+    color: rgb(44, 44, 44);
+    letter-spacing: -.01em;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.getstarted-btn {
+    border-radius: 10px;
+    background-color: rgb(14, 96, 238);
+    color: white;
+    letter-spacing: -.01em;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.learnmore-btn:hover {
+    background-color: rgb(245, 245, 245);
+}
+.getstarted-btn:hover{
+    background-color: rgb(57, 120, 231);
+}
+
+.hero-btn-container {
+    margin-top: 2.5rem;
+}

@@ -1,0 +1,19 @@
+/* h2 {
+
+    font-size: 2rem;
+    font-weight: 400;
+  } */
+  
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .links-container {
+    font-family: 'NeueMontreal';
+  }
+  
+  
+  .get-started-button {
+    padding: 10px 20px;
+    font-family: "NeueMontreal";
+  }

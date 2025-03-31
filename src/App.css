@@ -1,0 +1,44 @@
+@import "tailwindcss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* for Clerk */
+
+.cl-pageContainer {
+  background-color: black;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+
+/* ::-webkit-scrollbar-thumb {
+  @apply bg-rose-900 rounded-xl;
+} */
+/* .task > ::-webkit-scrollbar-thumb {
+    @apply bg-sky-400 rounded-xl;
+} */
+
+
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
+    }
+  }
+}

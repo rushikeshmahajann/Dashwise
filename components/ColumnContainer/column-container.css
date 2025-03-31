@@ -1,0 +1,17 @@
+.title-container {
+    letter-spacing: -.01em;
+    /* margin: 0.4rem 0.4rem; */
+    margin-bottom: 0.5rem;
+    padding-left: 0.4rem;
+}
+
+.col-container {
+    padding: 0.5rem;
+}
+
+.delete-btn {
+    padding-right: 0.2rem;
+}
+.add-task-btn {
+    padding-top: 0.6rem;
+}
