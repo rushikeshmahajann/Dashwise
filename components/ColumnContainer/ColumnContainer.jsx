@@ -18,7 +18,7 @@ const ColumnContainer = ({
   const [editMode, setEditMode] = useState(false);
 
   const tasksIds = useMemo(() => {
-    return tasks.map((task) => task.id);
+    return tasks.map(task => task.id);
   }, [tasks]);
 
   const {
@@ -47,10 +47,9 @@ const ColumnContainer = ({
       <div
         ref={setNodeRef}
         style={style}
-        className="bg-neutral-400 opacity-10 w-[350px] h-[500px] max-h-[500px] flex flex-col rounded-md"
-      >
-        HELLO
-      </div>
+        className="bg-neutral-400 opacity-10 w-[350px] h-[500px] max-h-[500px] flex flex-col rounded-md border-3 border-neutral-800 border-dashed"
+      />
+
     );
   }
   return (
@@ -107,6 +106,7 @@ const ColumnContainer = ({
               task={task}
               deleteTask={deleteTask}
               updateTask={updateTask}
+              columnId={column.title}
             />
           ))}
         </SortableContext>

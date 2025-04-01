@@ -14,7 +14,22 @@
 }
 
 .task-content {
-    padding: 0.3rem
+    padding: 0.3rem;
+    width:100%;
+}
+.task-content-edit {
+    width: 100%;
+    padding: 0.3rem;
+}
+
+textarea {
+    width: 100%;
+}
+.col-id {
+    margin-top: 0.2rem;
+    margin-left: 0.3rem;
+    padding: 0.2rem;
+    width: max-content;
 }
 /* 
 .trash-button {

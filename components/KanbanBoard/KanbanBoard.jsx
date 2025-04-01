@@ -11,7 +11,7 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import TaskCard from "../TaskCard/TaskCard";
-import Plus from '../../icons/Plus'
+import Plus from "../../icons/Plus";
 
 const KanbanBoard = () => {
   const [columns, setColumns] = useState([]);
@@ -40,11 +40,9 @@ const KanbanBoard = () => {
   const deleteColumn = (id) => {
     const filteredColumns = columns.filter((col) => col.id !== id);
     setColumns(filteredColumns);
-    
-    const newTasks = tasks.filter((t)=> 
-      t.columnId !== id
-    )
-    setTasks(newTasks)
+
+    const newTasks = tasks.filter((t) => t.columnId !== id);
+    setTasks(newTasks);
   };
 
   const updateColumn = (id, title) => {
@@ -79,8 +77,6 @@ const KanbanBoard = () => {
   };
 
   const onDragStart = (event) => {
-    console.log(event);
-
     if (event.active?.data?.current?.type === "Column") {
       setActiveColumn(event.active.data.current.column);
       return;
@@ -92,8 +88,9 @@ const KanbanBoard = () => {
   };
 
   const onDragEnd = (event) => {
-    setActiveColumn(null)
-    setActiveTask(null)
+    setActiveColumn(null);
+    setActiveTask(null);
+
     const { active, over } = event;
     if (!over) return;
 
@@ -110,7 +107,6 @@ const KanbanBoard = () => {
       const overColumnIndex = columns.findIndex(
         (col) => col.id === overColumnId
       );
-      if (activeColumnIndex === overColumnIndex) return columns;
 
       return arrayMove(columns, activeColumnIndex, overColumnIndex);
     });
@@ -128,7 +124,7 @@ const KanbanBoard = () => {
     const isActiveTask = active.data.current?.type === "Task";
     const isOverATask = over.data.current?.type === "Task";
 
-    if(!isActiveTask) return;
+    if (!isActiveTask) return;
 
     //Secanario 1: Dropping a task over another task.
     if (isActiveTask && isOverATask) {
@@ -136,23 +132,22 @@ const KanbanBoard = () => {
         const activeIndex = tasks.findIndex((t) => t.id === activeId);
         const overIndex = tasks.findIndex((t) => t.id === overId);
         
-        tasks[activeIndex].columnId = tasks[overIndex].columnId
+        tasks[activeIndex].columnId = tasks[overIndex].columnId;
 
-        return arrayMove(tasks, activeIndex, overIndex)
+        return arrayMove(tasks, activeIndex, overIndex);
       });
     }
 
     const isOverAColumn = over.data.current?.type === "Column";
     //Secanario 2: Dropping a task over a column
 
-    if(isActiveTask && isOverAColumn) {
+    if (isActiveTask && isOverAColumn) {
       setTasks((tasks) => {
         const activeIndex = tasks.findIndex((t) => t.id === activeId);
-        
-        
-        tasks[activeIndex].columnId = overId
 
-        return arrayMove(tasks, activeIndex, activeIndex)
+        tasks[activeIndex].columnId = overId;
+
+        return arrayMove(tasks, activeIndex, activeIndex);
       });
     }
   };
@@ -169,8 +164,8 @@ const KanbanBoard = () => {
         onDragEnd={onDragEnd}
         onDragOver={onDragOver}
       >
-        <div className="overflow-y-hidden">
-          <div className="flex gap-2">
+        <div className="overflow-y-hidden kanban-container">
+          <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
             <SortableContext items={columnsId}>
               {columns.map((col) => (
                 <div key={col.id}>

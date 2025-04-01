@@ -1,0 +1,14 @@
+.side-bar-container {
+    width: 100%;
+    max-width: 25rem; 
+    padding: 2rem  
+}
+
+.arrow-btn {
+    padding: 0.3rem;
+}
+.sidebar-hr {
+    width: 100%;
+    height: 1px;
+    margin: 0.5rem;
+}

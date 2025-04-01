@@ -8,12 +8,12 @@ import {
 
 import Hero from "../pages/Hero";
 import Navbar from "../components/Navbar/Navbar";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 function App() {
   return (
     <>
-      <header className="header">
+      <main className="main">
         <SignedOut>
           <Navbar />
           <Hero />
@@ -22,7 +22,7 @@ function App() {
           <Dashboard />
           <UserButton />
         </SignedIn>
-      </header>
+      </main>
     </>
   );
 }
