@@ -20,7 +20,7 @@ function App() {
         </SignedOut>
         <SignedIn>
           <Dashboard />
-          <UserButton />
+          
         </SignedIn>
       </main>
     </>

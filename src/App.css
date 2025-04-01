@@ -1,15 +1,21 @@
-@import "tailwindcss";
-* {
+
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 /* for Clerk */
 
 .cl-pageContainer {
   background-color: black;
 }
+.cl-userButtonAvatarBox {
+  width: 3rem ;
+  height: auto;
+}
+
+
 
 ::-webkit-scrollbar {
   width: 4px;
@@ -42,3 +48,4 @@
     }
   }
 }
+

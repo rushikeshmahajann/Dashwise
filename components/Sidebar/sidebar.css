@@ -3,6 +3,10 @@
     max-width: 25rem; 
     padding: 2rem  
 }
+.collapsed-side-bar-container{
+    width: 5rem;
+    padding: 2rem;
+}
 
 .arrow-btn {
     padding: 0.3rem;
