@@ -87,3 +87,17 @@
 .home-nav-link {
   @apply flex flex-row items-center justify-center hover:text-neutral-600 text-neutral-900 hover:stroke-gray-700 stroke-gray-900 gap-1 text-sm
 }
+.sx-react-calendar-wrapper {
+  width: 80vw;
+  height: 800px;
+  max-height: 90vh;
+  max-width: 100vw;
+}
+
+.task-container-button {
+  @apply px-4 py-3 text-neutral-800 hover:text-white hover:bg-neutral-800 border-neutral-400 border-1 rounded-3xl 
+}
+
+.on-going-task {
+  @apply px-4 py-3 hover:text-neutral-800 text-white bg-neutral-800 border-neutral-400 border-1 rounded-3xl  
+}

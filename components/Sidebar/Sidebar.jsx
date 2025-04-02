@@ -15,118 +15,145 @@ import Help from "../../icons/Help";
 import Invite from "../../icons/Invite";
 import Setting from "../../icons/Setting";
 import Stack from "../../icons/Stack";
-import gsap from 'gsap';
-import CollapsedSidebar from "./CollapsedSidebar";
+import Bulb from "../../icons/Bulb";
 
-const Sidebar = ({toggleMenu}) => {
+const Sidebar = ({ toggleMenu, onMenuClick }) => {
   const { user } = useUser();
 
   return (
     <>
-    <section className="side-bar-container bg-gray-100 h-[100vh] relative">
-      <div className="w-full h-max">
-        <div className="logo-container flex justify-between items-center border-b-1 border-gray-300">
-          <div className="flex gap-2 items-end">
-            <img className="w-auto rounded-xl h-12" src="/Logo.png" alt="Dashwise" />
-            <h2 className="font-medium text-lg text-gray-600 tracking-tighter leading-tight flex flex-col">
-              Dashwise{" "}
-              <span className="text-gray-400 font-normal text-sm">
-                dashwise@helpdesk.com
-              </span>
-            </h2>
+      <section className="side-bar-container bg-gray-100 h-[100vh] relative">
+        <div className="w-full h-max">
+          <div className="logo-container flex justify-between items-center border-b-1 border-gray-300">
+            <div className="flex gap-2 items-end">
+              <img
+                className="w-auto rounded-xl h-12"
+                src="/Logo.png"
+                alt="Dashwise"
+              />
+              <h2 className="font-medium text-lg text-gray-600 tracking-tighter leading-tight flex flex-col">
+                Dashwise{" "}
+                <span className="text-gray-400 font-normal text-sm">
+                  dashwise@helpdesk.com
+                </span>
+              </h2>
+            </div>
+
+            <button
+              onClick={toggleMenu}
+              className="arrow-btn stroke-neutral-500 hover:border-[1px] hover:shadow-md border-neutral-300 rounded-md cursor-pointer"
+            >
+              <Arrow />
+            </button>
           </div>
 
-          <button onClick={toggleMenu} className="arrow-btn stroke-neutral-500 hover:border-[1px] hover:shadow-md border-neutral-300 rounded-md cursor-pointer">
-            <Arrow />
-          </button>
-        </div>
-
-        {/* Overview */}
-        <div>
-          <h3 className="side-bar-menu-section">
-            Overview{" "}
-            <button className="stroke-gray-400">
-              <ArrowDown />
-            </button>
-          </h3>
-          <button className="side-bar-menu-title">
-            <Graph />
-            Dashboard
-          </button>
-          <button className="side-bar-menu-title">
-            <Calendar />
-            Calendar
-          </button>
-          <button className="side-bar-menu-title">
-            <Stack />
-            Kanban Board
-          </button>
-        </div>
-
-        {/* TASKS */}
-        <div>
-          <h3 className="side-bar-menu-section">
-            Tasks
-            <button className="stroke-gray-400">
-              <ArrowDown />
-            </button>
-          </h3>
-          <button className="side-bar-menu-title">
-            <File />
-            Backlog
-          </button>
-          <button className="side-bar-menu-title">
-            <Flash />
-            In progress
-          </button>
-          <button className="side-bar-menu-title">
-            <Click />
-            Validation
-          </button>
-          <button className="side-bar-menu-title">
-            <Check />
-            Done
-          </button>
-        </div>
-
-        {/* Useful Links */}
-        <div>
-          <h3 className="side-bar-menu-section">
-            Useful Links
-            <button className="stroke-gray-400">
-              <ArrowDown />
-            </button>
-          </h3>
-          <div className="flex flex-col">
-            <button className="side-bar-menu-title">
-              <Help /> Help Center
-            </button>
-            <button className="side-bar-menu-title">
-              <Setting />
-              Settings
-            </button>
-            <button className="side-bar-menu-title">
-              <Invite />
-              Invite teams
-            </button>
-          </div>
-        </div>
-
-        {/* Profile Section */}
-      </div>
-      <div className="flex flex-row gap-10 justify-between absolute bottom-8">
-        <div className="flex gap-1">
-        <UserButton />
+          {/* Overview */}
           <div>
-            <h3 className="font-medium text-lg text-gray-600 tracking-tighter leading-tight flex flex-col">{user?.fullName || "User"}</h3>
-            <p className="text-gray-500 font-normal text-sm">{user?.primaryEmailAddress?.emailAddress || "xyz@gmail.com"}</p>
+            <h3 className="side-bar-menu-section">
+              Overview{" "}
+              <button className="stroke-gray-400">
+                <ArrowDown />
+              </button>
+            </h3>
+            <button
+              onClick={() => onMenuClick("home")}
+              className="side-bar-menu-title"
+            >
+              <Graph />
+              Dashboard
+            </button>
+            <button
+              onClick={() => onMenuClick("calendar")}
+              className="side-bar-menu-title"
+            >
+              <Calendar />
+              Calendar
+            </button>
+            <button
+              onClick={() => onMenuClick("kanban")}
+              className="side-bar-menu-title"
+            >
+              <Stack />
+              Kanban Board
+            </button>
+            <button
+              onClick={() => onMenuClick("flow-designer")}
+              className="side-bar-menu-title"
+            >
+              <Bulb />
+              Flow Designer
+            </button>
           </div>
+
+          {/* TASKS */}
+          <div>
+            <h3 className="side-bar-menu-section">
+              Tasks
+              <button className="stroke-gray-400">
+                <ArrowDown />
+              </button>
+            </h3>
+            <button className="side-bar-menu-title">
+              <File />
+              Backlog
+            </button>
+            <button className="side-bar-menu-title">
+              <Flash />
+              In progress
+            </button>
+            <button className="side-bar-menu-title">
+              <Click />
+              Validation
+            </button>
+            <button className="side-bar-menu-title">
+              <Check />
+              Done
+            </button>
+          </div>
+
+          {/* Useful Links */}
+          <div>
+            <h3 className="side-bar-menu-section">
+              Useful Links
+              <button className="stroke-gray-400">
+                <ArrowDown />
+              </button>
+            </h3>
+            <div className="flex flex-col">
+              <button className="side-bar-menu-title">
+                <Help /> Help Center
+              </button>
+              <button className="side-bar-menu-title">
+                <Setting />
+                Settings
+              </button>
+              <button className="side-bar-menu-title">
+                <Invite />
+                Invite teams
+              </button>
+            </div>
+          </div>
+
+          {/* Profile Section */}
         </div>
-        <button className="arrow-btn stroke-neutral-500 hover:border-[1px] hover:shadow-md border-neutral-300 rounded-md cursor-pointer flex items-center">
-          <ArrowUpDown />
-        </button>
-      </div>
-    </section></>
+        <div className="flex flex-row gap-10 justify-between absolute bottom-8">
+          <div className="flex gap-1">
+            <UserButton />
+            <div>
+              <h3 className="font-medium text-lg text-gray-600 tracking-tighter leading-tight flex flex-col">
+                {user?.fullName || "User"}
+              </h3>
+              <p className="text-gray-500 font-normal text-sm">
+                {user?.primaryEmailAddress?.emailAddress || "xyz@gmail.com"}
+              </p>
+            </div>
+          </div>
+          <button className="arrow-btn stroke-neutral-500 hover:border-[1px] hover:shadow-md border-neutral-300 rounded-md cursor-pointer flex items-center">
+            <ArrowUpDown />
+          </button>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -4,12 +4,13 @@ import { useUser } from "@clerk/clerk-react";
 import { AnimatedTooltipPreview } from "../../components/AnimatedTooltipPreview";
 import Link from "../../icons/Link";
 import File from "../../icons/File";
-import Calendar from "../../components/Calendar/Calendar";
-const Home = ({ setCmdOpen }) => {
+import KanbanBoard from "../../components/KanbanBoard/KanbanBoard";
+import CalendarApp from "../../components/Calendar/Calendar";
+const Home = ({ setCmdOpen, component }) => {
   const { user } = useUser();
   return (
-    <section className="h-full w-full relative">
-      <div className="flex justify-between items-end border-b border-neutral-300 pb-3">
+    <section className="h-full w-full relative pb-2">
+      <div className="flex justify-between items-end border-b border-neutral-300 pb-3 mb-4">
         <h2 className="text-neutral-700 text-2xl font-medium tracking-tight leading-normal">
           Welcome, {user?.firstName || "User"}! 👋🏻
         </h2>
@@ -25,12 +26,12 @@ const Home = ({ setCmdOpen }) => {
             </button>
           </div>
         </div>
-        <div className="absolute right-10 bottom-0">
+        <div className="fixed right-8 bottom-6 z-999">
           <AnimatedTooltipPreview />
         </div>
       </div>
-      <div>
-        <Calendar />
+      <div className="relative overflow-y-auto h-[100%]">
+       {component}
       </div>
     </section>
   );

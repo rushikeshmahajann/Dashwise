@@ -12,6 +12,8 @@ import {
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import TaskCard from "../TaskCard/TaskCard";
 import Plus from "../../icons/Plus";
+import Stack from "../../icons/Stack";
+import SectionTitle from "../SectionTitle";
 
 const KanbanBoard = () => {
   const [columns, setColumns] = useState([]);
@@ -131,7 +133,7 @@ const KanbanBoard = () => {
       setTasks((tasks) => {
         const activeIndex = tasks.findIndex((t) => t.id === activeId);
         const overIndex = tasks.findIndex((t) => t.id === overId);
-        
+
         tasks[activeIndex].columnId = tasks[overIndex].columnId;
 
         return arrayMove(tasks, activeIndex, overIndex);
@@ -158,14 +160,22 @@ const KanbanBoard = () => {
 
   return (
     <>
+      <SectionTitle title={"Kanban Board"} subHeading={"Streamline your tasks"} icon={<Stack />} />
+      <button
+        className="add-column-btn rounded-md stroke-neutral-500 hover:stroke-neutral-800 text-neutral-500 hover:text-neutral-800 tracking-tight flex items-center bg-gray-100 px-1.5 py-1 mb-2"
+        onClick={() => createNewColumn()}
+      >
+        <Plus />Add Column
+      </button>
+
       <DndContext
         sensors={sensors}
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
         onDragOver={onDragOver}
       >
-        <div className="overflow-y-hidden kanban-container">
-          <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
+        <div className="overflow-y-hidden">
+          <div className="flex gap-2">
             <SortableContext items={columnsId}>
               {columns.map((col) => (
                 <div key={col.id}>
@@ -182,13 +192,6 @@ const KanbanBoard = () => {
               ))}
             </SortableContext>
           </div>
-
-          <button
-            className="add-column-btn rounded-md stroke-neutral-500 hover:stroke-neutral-800 text-white fixed bottom-10 right-10"
-            onClick={() => createNewColumn()}
-          >
-            <Plus />
-          </button>
         </div>
 
         {createPortal(
