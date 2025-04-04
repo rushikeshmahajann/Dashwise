@@ -20,7 +20,7 @@
 
 .placeholder-container {
     width: 100%;
-    padding: 1rem;
+    padding: 0rem;
 }
 
 @media (min-width: 768px) {

@@ -11,7 +11,7 @@ const Home = ({ setCmdOpen, component, componentName }) => {
 
   return (
     <section className="h-full w-full relative pb-2">
-      <div className="flex justify-between items-end border-b border-neutral-300 pb-3 mb-4">
+      <div className="flex justify-between items-end border-b border-neutral-300 px-2 pt-4 sm:px-0 sm:pt-0 pb-3 mb-4">
         <h2 className="text-neutral-700 text-2xl font-medium tracking-tight leading-normal">
           Welcome, {user?.firstName || "User"}! 👋🏻
         </h2>
@@ -28,7 +28,7 @@ const Home = ({ setCmdOpen, component, componentName }) => {
             </button>
           </div>
         </div>
-        <div className="fixed bottom-2 right-5 md:bottom-10 md:right-15 z-0 md:z-[10] ">
+        <div className="fixed hidden md:block bottom-2 right-5 md:bottom-10 md:right-15 z-0 md:z-[10] ">
           <AnimatedTooltipPreview />
         </div>
       </div>

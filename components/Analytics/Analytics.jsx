@@ -29,7 +29,7 @@ const Analytics = () => {
   }, []);
   return (
     <div
-      className="bg-gray-100 rounded-xl w-full p-2 lg:h-full mx-auto"
+      className="bg-gray-100 rounded-xl w-full p-6 lg:h-full mx-auto"
     >
       <div className="flex flex-col gap-2 md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-2 2xl:max-w-[90%]">
         <div className="rounded-xl p-4 bg-white w-full xl:max-w-xl h-full lg:h-max">
