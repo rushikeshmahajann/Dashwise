@@ -6,44 +6,90 @@ import CollapsedSidebar from "../../components/Sidebar/CollapsedSidebar";
 import Home from "./Home";
 import CommandMenu from "../../components/Search/CommandMenu";
 import CalendarApp from "../../components/Calendar/Calendar";
-import FlowDesigner from '../../components/FlowDesigner/FlowDesigner'
+import FlowDesigner from "../../components/FlowDesigner/FlowDesigner";
 import Analytics from "../../components/Analytics/Analytics";
+import { handleMenuClick } from "../../lib/handleMenuClick";
+
 const Dashboard = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
   const [cmdOpen, setCmdOpen] = useState(false);
   const [activeComponent, setActiveComponent] = useState("home");
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const menuClickHandler = handleMenuClick(setActiveComponent);
 
-  const handleMenuClick = (component) => {
-    setActiveComponent(component);
+  const renderComponentByName = (name) => {
+    switch (name) {
+      case "kanban":
+        return <KanbanBoard />;
+      case "calendar":
+        return <CalendarApp />;
+      case "flow-designer":
+        return <FlowDesigner />;
+      case "home":
+      default:
+        return <Analytics />;
+    }
   };
 
   const renderActiveComponent = () => {
     switch (activeComponent) {
       case "kanban":
-        return <Home setCmdOpen={setCmdOpen} component={<KanbanBoard />} />;
+        return (
+          <Home
+            key={activeComponent}
+            setCmdOpen={setCmdOpen}
+            componentName={activeComponent}
+            component={renderComponentByName(activeComponent)}
+          />
+        );
       case "home":
-        return <Home setCmdOpen={setCmdOpen} component={<Analytics />} />;
+        return (
+          <Home
+            key={activeComponent}
+            setCmdOpen={setCmdOpen}
+            componentName={activeComponent}
+            component={renderComponentByName(activeComponent)}
+          />
+        );
       case "calendar":
-        return <Home setCmdOpen={setCmdOpen} component={<CalendarApp />} />;
+        return (
+          <Home
+            key={activeComponent}
+            setCmdOpen={setCmdOpen}
+            componentName={activeComponent}
+            component={renderComponentByName(activeComponent)}
+          />
+        );
       case "flow-designer":
-        return <Home setCmdOpen={setCmdOpen} component={<FlowDesigner />} />;
+        return (
+          <Home
+            key={activeComponent}
+            setCmdOpen={setCmdOpen}
+            componentName={activeComponent}
+            component={renderComponentByName(activeComponent)}
+          />
+        );
       default:
-        return <Home setCmdOpen={setCmdOpen} component={<Analytics />} />
+        return (
+          <Home
+            key={activeComponent}
+            setCmdOpen={setCmdOpen}
+            componentName={activeComponent}
+            component={renderComponentByName(activeComponent)}
+          />
+        );
     }
   };
+
   return (
     <section className="dashboard-section h-full w-full">
       <div className="dashboard-container flex overflow-hidden">
         {menuOpen ? (
-          <Sidebar toggleMenu={toggleMenu} onMenuClick={handleMenuClick} />
+          <Sidebar toggleMenu={setMenuOpen} onMenuClick={menuClickHandler} />
         ) : (
-          <CollapsedSidebar toggleMenu={toggleMenu} />
+          <CollapsedSidebar toggleMenu={setMenuOpen} />
         )}
-        <div className="placeholder-container overflow-hidden">
+        <div className="placeholder-container pb-2 overflow-hidden">
           {renderActiveComponent()}
         </div>
       </div>

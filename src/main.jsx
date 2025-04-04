@@ -6,11 +6,12 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import ErrorComponent from '../components/ErrorComponent.jsx'
 import SignInPage from "../pages/SignInPage.jsx";
+import Home from "../pages/Dashboard/Home.jsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if (!PUBLISHABLE_KEY) {
-  throw new Error("Add your Clerk Publishable Key to the .env file");
+  throw new Error("Some Clerk Key error");
 }
 
 let router = createBrowserRouter([

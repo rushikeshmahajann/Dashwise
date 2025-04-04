@@ -1,7 +1,16 @@
 .side-bar-container {
     width: 100%;
-    max-width: 25rem; 
-    padding: 2rem  
+    padding: 1rem; 
+    
+}
+
+@media (min-width: 768px) {
+    .side-bar-container {
+        width: 100%;
+        padding: 2rem; 
+        max-width: 25rem;
+        display: block;
+    }
 }
 .collapsed-side-bar-container{
     width: 5rem;

@@ -32,7 +32,7 @@ const CommandMenu = ({ open, setOpen }) => {
       onOpenChange={setOpen}
       ref={commandRef}
     >
-      <div className="bg-white rounded-lg shadow-xl border-neutral-400 border overflow-hidden w-full max-w-lg mx-auto mt-40 p-5">
+      <div className="bg-white z-999 rounded-lg shadow-xl border-neutral-400 border overflow-hidden w-full max-w-lg mx-auto mt-40 p-5">
         <Command.Input
           className="relative border-b border-neutral-200 text-xl text-neutral-700 pb-1 w-full focus:ring-0 focus:outline-none"
           placeholder="Search"
@@ -72,7 +72,9 @@ const CommandMenu = ({ open, setOpen }) => {
           <Command.Group className="group-title" heading="Session">
             <Command.Item className="command-item-name  flex justify-between">
               <UserButton className="cmd-user-button" />
-              <span className="ml-2 flex items-center text-neutral-400"><LuCommand />K</span>
+              <span className="ml-2 flex items-center text-neutral-400">
+                <LuCommand />K to exit
+              </span>
             </Command.Item>
 
             <Command.Separator />

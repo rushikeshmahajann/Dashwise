@@ -16,8 +16,20 @@ import Stack from "../../icons/Stack";
 import SectionTitle from "../SectionTitle";
 
 const KanbanBoard = () => {
-  const [columns, setColumns] = useState([]);
-  const [tasks, setTasks] = useState([]);
+  const [columns, setColumns] = useState([
+    { id: 5700, title: "To-Do 🥱" },
+    { id: 6618, title: "In Progress 👷🏻" },
+    { id: 9025, title: "Done 😮‍💨" },
+  ]);
+  const [tasks, setTasks] = useState([
+    { id: 9469, columnId: 5700, content: 'This is Kanban Board you can click and grab near top of either column or task container to make it move but make sure to do it slowly.' },
+    { id: 7380, columnId: 5700, content: 'You can easily change title or task by clicking on it.' },
+    { id: 7862, columnId: 5700, content: 'If my app crashes because of kanban I am sorry but u can always go back to base url:)' },
+    { id: 9120, columnId: 6618, content: 'BTW I asked you to move things slowly because I believe React 19 has a bug where it goes to infinite render mode and app crashes and I dont want you to see me fail miserably.' },
+    { id: 710, columnId: 6618, content: 'I am using an insane library called dnd kit to make things move here.' },
+    { id: 7861, columnId: 9025, content: 'I didnt know how to do this before but I learnt it recently.' },
+    { id: 3952, columnId: 9025, content: 'Adding Task and Adding more column is pretty self explanatory also the colors are randomized for now on every render.' }
+  ]);
   const columnsId = useMemo(() => columns.map((col) => col.id), [columns]);
 
   const [activeColumn, setActiveColumn] = useState(null);
@@ -79,6 +91,8 @@ const KanbanBoard = () => {
   };
 
   const onDragStart = (event) => {
+    console.log(tasks);
+    
     if (event.active?.data?.current?.type === "Column") {
       setActiveColumn(event.active.data.current.column);
       return;

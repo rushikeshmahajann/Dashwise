@@ -29,7 +29,7 @@ const CollapsedSidebar = ({ toggleMenu }) => {
         <section>
           <button
           onClick={toggleMenu}
-          className="stroke-neutral-500 hover:border-[1px] hover:shadow-md border-neutral-300 rounded-md cursor-pointer fixed top-10 left-1"
+          className="stroke-neutral-500 hover:border-[1px] hover:shadow-md border-neutral-300 rounded-md cursor-pointer fixed top-5 right-5 z-999"
         >
           <Arrow />
         </button>

@@ -16,13 +16,28 @@ import Invite from "../../icons/Invite";
 import Setting from "../../icons/Setting";
 import Stack from "../../icons/Stack";
 import Bulb from "../../icons/Bulb";
+import { useState, useEffect } from "react";
 
 const Sidebar = ({ toggleMenu, onMenuClick }) => {
   const { user } = useUser();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
-      <section className="side-bar-container bg-gray-100 h-[100vh] relative">
+      <section
+        className={`${
+          isMobile ? "fixed" : null
+        } top-0 left-0 sm:block side-bar-container bg-gray-100 h-[100vh] z-[890] md:z-0`}
+      >
         <div className="w-full h-max">
           <div className="logo-container flex justify-between items-center border-b-1 border-gray-300">
             <div className="flex gap-2 items-end">
@@ -40,7 +55,7 @@ const Sidebar = ({ toggleMenu, onMenuClick }) => {
             </div>
 
             <button
-              onClick={toggleMenu}
+              onClick={()=>toggleMenu()}
               className="arrow-btn stroke-neutral-500 hover:border-[1px] hover:shadow-md border-neutral-300 rounded-md cursor-pointer"
             >
               <Arrow />
@@ -56,28 +71,48 @@ const Sidebar = ({ toggleMenu, onMenuClick }) => {
               </button>
             </h3>
             <button
-              onClick={() => onMenuClick("home")}
+              onClick={() => {
+                onMenuClick("home");
+                if (isMobile) {
+                  toggleMenu();
+                }
+              }}
               className="side-bar-menu-title"
             >
               <Graph />
               Dashboard
             </button>
             <button
-              onClick={() => onMenuClick("calendar")}
+              onClick={() => {
+                onMenuClick("calendar");
+                if (isMobile) {
+                  toggleMenu();
+                }
+              }}
               className="side-bar-menu-title"
             >
               <Calendar />
               Calendar
             </button>
             <button
-              onClick={() => onMenuClick("kanban")}
+              onClick={() => {
+                onMenuClick("kanban");
+                if (isMobile) {
+                  toggleMenu();
+                }
+              }}
               className="side-bar-menu-title"
             >
               <Stack />
               Kanban Board
             </button>
             <button
-              onClick={() => onMenuClick("flow-designer")}
+              onClick={() => {
+                onMenuClick("flow-designer");
+                if (isMobile) {
+                  toggleMenu();
+                }
+              }}
               className="side-bar-menu-title"
             >
               <Bulb />
