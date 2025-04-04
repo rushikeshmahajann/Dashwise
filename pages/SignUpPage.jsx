@@ -11,6 +11,7 @@ const SignUpPage = () => {
         <div className="w-max flex justify-center items-center">
           <SignUp
           path="/sign-up"
+          routing="path"
           signInUrl="/sign-in"
             appearance={{
               elements: {
