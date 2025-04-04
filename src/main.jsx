@@ -3,10 +3,11 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { ClerkProvider } from "@clerk/clerk-react";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider,  } from "react-router";
 import ErrorComponent from '../components/ErrorComponent.jsx'
 import SignInPage from "../pages/SignInPage.jsx";
 import SignUpPage from "../pages/SignUpPage.jsx";
+import { RedirectToSignUp } from "@clerk/clerk-react";
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -33,7 +34,7 @@ let router = createBrowserRouter([
   },
   {
     path:"/sso-callback",
-    element: <SignInPage />,
+    element: <App />,
     errorElement: <ErrorComponent />,
   }
 

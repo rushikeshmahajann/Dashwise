@@ -2,7 +2,7 @@
 import { AuroraBackground } from "../components/AuroraBackground";
 import { useNavigate } from "react-router-dom";
 
-export default function ErrorComponent() {
+export default function ErrorComponent({error}) {
   const navigate = useNavigate();
 
   const handleGoHome = () => {
@@ -22,7 +22,9 @@ export default function ErrorComponent() {
           </h1>
 
           <div className="mb-8 rounded-lg bg-white p-6 shadow-md max-w-md mx-auto">
+          {error && <p>{error.message}</p>}
             <p className="text-lg text-gray-600 tracking-tight max-w-lg">
+            
               Sorry for the inconvenience.It is likely a react 19 issue I'll fix this issue as soon as
               possible. Please return to the home page to continue.
             </p>

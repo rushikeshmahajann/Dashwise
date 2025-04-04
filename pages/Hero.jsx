@@ -4,7 +4,6 @@ import ContainerTextFlip from "../components/ContainerTextFlip";
 import { cn } from "../lib/utils";
 import { motion } from "motion/react";
 import "../pages/hero.css";
-import { SignIn } from "@clerk/clerk-react";
 import { useNavigate } from "react-router";
 
 const Hero = () => {
