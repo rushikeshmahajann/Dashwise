@@ -14,26 +14,26 @@ const Navbar = () => {
       <nav className="w-full max-w-[1300px] mx-auto flex justify-between items-center">
         <div className="flex items-center gap-1">
           <img className="w-8" src={logo} alt="" />
-          <h2 className="tracking-tighter text-xl lg:text-3xl text-gray-700 font-semibold">
+          <h2 className="tracking-tighter text-xl lg:text-3xl text-gray-700 mix-blend-difference dark:text-gray-300 font-semibold">
             Dashwise
           </h2>
         </div>
 
-        <div className="hidden sm:flex links-container w-full justify-center gap-10 text-gray-700 text-lg tracking-tight">
+        <div className="hidden sm:flex links-container w-full justify-center gap-10 text-gray-700 text-lg tracking-tight mix-blend-difference">
           <a
-            className="hover:text-gray-900 transition-colors ease-in-out"
+            className="hover:text-gray-900 dark:text-gray-400 transition-colors ease-in-out mix-blend-difference"
             href=""
           >
             Features
           </a>
           <a
-            className="hover:text-gray-900 transition-colors ease-in-out"
+            className="hover:text-gray-900 transition-colors ease-in-out dark:text-gray-400 mix-blend-difference" 
             href=""
           >
             Reviews
           </a>
           <a
-            className="hover:text-gray-900 transition-colors ease-in-out"
+            className="hover:text-gray-900 transition-colors ease-in-out dark:text-gray-400 mix-blend-difference"
             href=""
           >
             FAQ

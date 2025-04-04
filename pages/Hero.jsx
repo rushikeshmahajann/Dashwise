@@ -39,17 +39,17 @@ const Hero = () => {
                 )}
                 layout
               >
-                <div className="inline-block">
+                <div className="inline-block dark:mix-blend-difference">
                   Dashwise makes data <ContainerTextFlip words={words} />
                   {/* <Blips /> */}
                 </div>
               </motion.h1>
-              <h2 className="hero-description text-left text-xl max-w-3xl font-neue tracking-tight lg:text-center text-gray-600 md:text-2xl">
+              <h2 className="hero-description text-left text-xl max-w-3xl font-neue tracking-tight lg:text-center dark:text-neutral-400 text-gray-600 md:text-2xl dark:mix-blend-difference">
                 Track key metrics, uncover insights, and optimize decisions—all
                 in one clean, powerful dashboard.
               </h2>
               <div className="mt-8 flex gap-4 items-center justify-center tracking-tight">
-                <button className="px-3 py-2 border-neutral-400 border rounded-md cursor-pointer lg:text-xl lg:px-5 lg:py-3 hover:shadow-lg">
+                <button className="px-3 py-2 border-neutral-400 border rounded-md cursor-pointer dark:text-neutral-200 lg:text-xl lg:px-5 lg:py-3 hover:shadow-lg">
                   Learn More
                 </button>
 
