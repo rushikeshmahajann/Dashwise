@@ -12,7 +12,6 @@ const SignUpPage = () => {
           <SignUp
           path="/sign-up"
           routing="path"
-          signInUrl="/sign-in"
             appearance={{
               elements: {
                 formButtonPrimary: "your-org-button org-red-button",

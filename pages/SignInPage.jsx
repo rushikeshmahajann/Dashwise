@@ -11,7 +11,6 @@ const SignInPage = () => {
         <div className="w-max flex justify-center items-center">
           <SignIn
             path="/sign-in"
-            signUpUrl="sign-up"
             appearance={{
               elements: {
                 formButtonPrimary: "your-org-button org-red-button",

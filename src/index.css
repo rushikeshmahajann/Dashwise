@@ -25,7 +25,7 @@
   }
 }
 
-/* @font-face {
+@font-face {
   font-family: 'NeueMontreal';
   src: url('/Fonts/ppneuemontreal-bold.otf') format('opentype');
   font-weight: 600;
@@ -65,7 +65,7 @@
   src: url('/Fonts/ppneuemontreal-thin.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
-} */
+}
 
 
 .side-bar-menu-title {
