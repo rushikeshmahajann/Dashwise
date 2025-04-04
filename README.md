@@ -1,7 +1,6 @@
-I'll combine your provided content with the existing markdown to create a complete README file. Here's the full markdown ready to copy and paste:
 
 # 🚀 Dashwise – Enterprise Dashboard Assignment for Datawise
-Dashwise is a feature-rich, responsive enterprise dashboard built using React.js. Developed as part of a front-end assignment for [Datawise](https://datawise.com), it demonstrates key concepts like responsive UI design, component-based architecture, state management, and interactive user experiences.
+Dashwise is a feature-rich, responsive enterprise dashboard built using React.js. Developed as part of a front-end assignment for [Datawise](https://trydatawise.com), it demonstrates key concepts like responsive UI design, component-based architecture, state management, and interactive user experiences.
 ---
 ## 📋 Table of Contents
 - [📖 Overview](#-overview)
@@ -57,7 +56,7 @@ The dashboard is fully responsive and performs seamlessly on desktops, tablets, 
 | Calendar            | schedule-x                      |
 | State Management    | React Hooks, Context API        |
 | API Requests        | Fetch                           |
-| Deployment Ready    | Mobile-Responsive & Optimized   |
+| Deployment          | Vercel                          |
 ---
 ## 📁 Project Structure
 ```bash
@@ -81,8 +80,8 @@ dashwise/
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/dashwise.git
-cd dashwise
+git clone https://github.com/rushikeshmahajann/Dashwise
+cd dashboard
 ```
 
 2. **Install dependencies**
@@ -107,7 +106,7 @@ npm run dev
 ---
 ## 🚀 Usage
 Once the app starts, you can:
-* ✅ Sign up/Login with Clerk.
+* ✅ Sign up if you are new user/Login if you already have account with Clerk.
 * 📊 Land on the **Dashboard** with analytics widgets and charts.
 * 🗂 Navigate between **Kanban**, **Calendar**, and **Flow Designer** using the sidebar.
 * 🔄 Drag and drop tasks or calendar events to update their state/date.
@@ -120,6 +119,6 @@ Once the app starts, you can:
 * The entire dashboard is **fully mobile-optimized**, using **Flexbox**, **CSS Grid**, and **Tailwind**.
 ---
 ## 📄 License
-This project is licensed for demonstration purposes as part of a job assignment. All content is © [Your Name].
+This project is licensed for demonstration purposes as part of a job assignment. All content is © Rushikesh Mahajan.
 
 Made with ❤️ for **Datawise**
