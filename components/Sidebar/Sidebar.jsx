@@ -171,7 +171,7 @@ const Sidebar = ({ toggleMenu, onMenuClick }) => {
 
           {/* Profile Section */}
         </div>
-        <div className="flex flex-row gap-10 justify-between absolute bottom-30">
+        <div className="flex flex-row gap-10 justify-between absolute bottom-30 sm:bottom-8">
           <div className="flex gap-1">
             <UserButton />
             <div>

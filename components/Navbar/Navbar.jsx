@@ -6,8 +6,8 @@ import {useNavigate} from 'react-router';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const SignIn = () => {
-    navigate("/SignIn");
+  const handleSignUp = () => {
+    navigate("/sign-up");
   };
   return (
     <div className="w-full bg-transparent fixed top-0 z-999 flex justify-center">
@@ -40,7 +40,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <button onClick={SignIn} className="hidden sm:block px-2 py-2 rounded-md text-sm  bg-blue-600 text-white font-neue font-medium text-nowrap hover:bg-blue-500 hover:shadow-lg hover:bg-gradient-to-b from-blue-500 to-blue-700 transition-all ease-in-out">
+        <button onClick={handleSignUp} className="hidden sm:block px-2 py-2 rounded-md text-sm  bg-blue-600 text-white font-neue font-medium text-nowrap hover:bg-blue-500 hover:shadow-lg hover:bg-gradient-to-b from-blue-500 to-blue-700 transition-all ease-in-out">
           Free Trial
         </button>
       </nav>

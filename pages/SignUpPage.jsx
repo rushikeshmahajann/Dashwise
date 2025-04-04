@@ -1,17 +1,17 @@
 import React from "react";
-import { SignIn } from "@clerk/clerk-react";
+import { SignUp } from "@clerk/clerk-react";
 import { BackgroundBeams } from "../components/BackgroundBeams";
 
-const SignInPage = () => {
+const SignUpPage = () => {
   return (
     <section className="h-[100vh] w-[100vw] flex items-center justify-center">
       <div className="max-w-[1300px] flex">
         <BackgroundBeams />
 
         <div className="w-max flex justify-center items-center">
-          <SignIn
-            path="/sign-in"
-            signUpUrl="sign-up"
+          <SignUp
+          path="/sign-up"
+          signInUrl="/sign-in"
             appearance={{
               elements: {
                 formButtonPrimary: "your-org-button org-red-button",
@@ -24,4 +24,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignUpPage;

@@ -6,7 +6,8 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import ErrorComponent from '../components/ErrorComponent.jsx'
 import SignInPage from "../pages/SignInPage.jsx";
-import Home from "../pages/Dashboard/Home.jsx";
+import SignUpPage from "../pages/SignUpPage.jsx";
+
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -21,10 +22,21 @@ let router = createBrowserRouter([
     errorElement: <ErrorComponent />,
   },
   {
-    path: "/SignIn",
+    path: "/sign-in",
     element: <SignInPage />,
     errorElement: <ErrorComponent />
+  },
+  {
+    path: "/sign-up",
+    element: <SignUpPage />,
+    errorElement: <ErrorComponent />,
+  },
+  {
+    path:"/sso-callback",
+    element: <SignInPage />,
+    errorElement: <ErrorComponent />,
   }
+
 ]);
 
 createRoot(document.getElementById("root")).render(

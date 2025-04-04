@@ -9,8 +9,8 @@ import { useNavigate } from "react-router";
 
 const Hero = () => {
   const navigate = useNavigate();
-  const SignIn = () => {
-    navigate("/SignIn");
+  const handleSignUp = () => {
+    navigate("/sign-up");
   };
   const words = ["simple", "visual", "beautiful", "awesome"];
   return (
@@ -54,7 +54,7 @@ const Hero = () => {
                   Learn More
                 </button>
 
-                <button onClick={SignIn} className="px-3 py-2 bg-blue-600 border-blue-750 text-white border lg:text-xl lg:px-5 lg:py-3 rounded-md cursor-pointer hover:shadow-lg hover:bg-gradient-to-b from-blue-500 to-blue-700 transition-all ease-in-out">
+                <button onClick={handleSignUp} className="px-3 py-2 bg-blue-600 border-blue-750 text-white border lg:text-xl lg:px-5 lg:py-3 rounded-md cursor-pointer hover:shadow-lg hover:bg-gradient-to-b from-blue-500 to-blue-700 transition-all ease-in-out">
                   Get started
                 </button>
               </div>
