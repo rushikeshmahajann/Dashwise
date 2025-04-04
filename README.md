@@ -1,11 +1,9 @@
+I'll combine your provided content with the existing markdown to create a complete README file. Here's the full markdown ready to copy and paste:
+
 # 🚀 Dashwise – Enterprise Dashboard Assignment for Datawise
-
 Dashwise is a feature-rich, responsive enterprise dashboard built using React.js. Developed as part of a front-end assignment for [Datawise](https://datawise.com), it demonstrates key concepts like responsive UI design, component-based architecture, state management, and interactive user experiences.
-
 ---
-
 ## 📋 Table of Contents
-
 - [📖 Overview](#-overview)
 - [✨ Features](#-features)
 - [🛠 Tech Stack](#-tech-stack)
@@ -14,21 +12,13 @@ Dashwise is a feature-rich, responsive enterprise dashboard built using React.js
 - [🚀 Usage](#-usage)
 - [📌 Notes](#-notes)
 - [📄 License](#-license)
-
 ---
-
 ## 📖 Overview
-
 Dashwise mimics a project management and analytics tool with multiple integrated widgets and views to simulate enterprise-level UI design. While this version focuses on the front-end, it contains fully functional components that interact with APIs and leverage third-party libraries for drag-and-drop, calendar scheduling, and more.
-
 The dashboard is fully responsive and performs seamlessly on desktops, tablets, and mobile devices.
-
 ---
-
 ## ✨ Features
-
 ### 📊 Analytics Dashboard
-
 - **Tasks Manager Widget** – Manage and view current tasks.
 - **Upcoming Meetings Widget** – Displays upcoming scheduled meetings.
 - **Project Status Pie Chart** – Visual overview of projects categorized into:
@@ -37,37 +27,24 @@ The dashboard is fully responsive and performs seamlessly on desktops, tablets, 
   - ⌛ Pending
 - **Expense vs Income Chart** – Bar chart comparing income and expense stats.
 - **Live API Integration** – Dynamic data fetched for charts.
-
 ### 📌 Kanban Board
-
 - Fully **drag-and-drop** enabled using `@dnd-kit`.
 - Drag entire columns or individual tasks between sections.
-
 ### 📅 Calendar View
-
 - Integrated calendar using `@schedule-x`.
 - **Draggable Events** – Reschedule by dragging events to another day.
 - Clean and intuitive UI to manage and visualize time-based tasks.
-
 ### 🧠 Flow Designer
-
 - Create and visualize **node graphs** to simulate workflows or pipelines.
 - Demonstrates canvas-based interaction and graph structures.
-
 ### 🔍 Command Menu (CMD + K)
-
 - Integrated using `cmdk` library.
 - Allows quick navigation and search (UI ready but not functional due to time constraints).
-
 ### 🔐 Authentication
-
 - User authentication powered by **Clerk**.
 - Features: Sign-up, Login, Logout, and route protection.
-
 ---
-
 ## 🛠 Tech Stack
-
 | Category            | Tech / Library                  |
 |---------------------|----------------------------------|
 | Frontend Framework  | React.js                        |
@@ -81,25 +58,68 @@ The dashboard is fully responsive and performs seamlessly on desktops, tablets, 
 | State Management    | React Hooks, Context API        |
 | API Requests        | Fetch                           |
 | Deployment Ready    | Mobile-Responsive & Optimized   |
-
 ---
-
 ## 📁 Project Structure
-
 ```bash
-dashboard/
-├── components/
-├── icons/
-├── lib/
-├── pages/
+dashwise/
 ├── public/
 ├── src/
 │   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── routes/
+│   ├── utils/
 │   ├── App.jsx
 │   └── main.jsx
-│   └── App.css
-│   └── index.css
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+---
+## 📦 Installation
+⚠️ You'll need **Node.js >= 14.x** and **npm** installed.
+1. **Clone the repository**
 
+```bash
+git clone https://github.com/your-username/dashwise.git
+cd dashwise
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up Clerk Auth (Optional)**
+You'll need a Clerk project and publishable key.
+Create a `.env` file in the root and add:
+
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+```
+
+4. **Run the app**
+
+```bash
+npm run dev
+```
+---
+## 🚀 Usage
+Once the app starts, you can:
+* ✅ Sign up/Login with Clerk.
+* 📊 Land on the **Dashboard** with analytics widgets and charts.
+* 🗂 Navigate between **Kanban**, **Calendar**, and **Flow Designer** using the sidebar.
+* 🔄 Drag and drop tasks or calendar events to update their state/date.
+* ⌨️ Press **CMD + K** to open the search menu (UI demo only).
+---
+## 📌 Notes
+* This project was built within **1 week** as part of the **Front-End Developer Assignment for Datawise**.
+* Backend functionalities are mocked or placeholders due to front-end focus.
+* Some advanced features like CMDK search are UI-only due to time constraints.
+* The entire dashboard is **fully mobile-optimized**, using **Flexbox**, **CSS Grid**, and **Tailwind**.
+---
+## 📄 License
+This project is licensed for demonstration purposes as part of a job assignment. All content is © [Your Name].
+
+Made with ❤️ for **Datawise**
